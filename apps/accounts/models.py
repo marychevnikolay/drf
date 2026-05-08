@@ -1,3 +1,29 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-# Create your models here.
+
+class User(AbstractUser):
+    "Кастомная модель пользователя"
+    email = models.EmailField(unique=True, verbose_name="Email")
+    first_name = models.CharField(max_length=50, blank=True)
+    last_name = models.CharField(max_length=50, blank=True)
+    avatar = models.ImageField(upload_to="avatars/", blank=True, null=True)
+    bio = models.TextField(max_length = 500, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    is_active = models.BooleanField(default=True)
+
+    USERNAMENAME_FIELD = 'email'
+    READ_ONLY_FIELDS = ['username']
+
+    class Meta:
+        db_table = 'users'
+        verbose_name = 'user'
+        verbose_name_plural = 'Users'
+
+    def __str__(self):
+        return self.email    
+    
+    @property
+    def full_name(self):
+        return f'{self.first_name} {self.last_name}'.strip()

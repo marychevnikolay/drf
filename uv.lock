@@ -346,6 +346,7 @@ dependencies = [
     { name = "drf-yasg" },
     { name = "pillow" },
     { name = "psycopg2" },
+    { name = "pyjwt" },
     { name = "python-decouple" },
 ]
 
@@ -361,6 +362,7 @@ requires-dist = [
     { name = "drf-yasg", specifier = ">=1.21.15" },
     { name = "pillow", specifier = ">=12.2.0" },
     { name = "psycopg2", specifier = ">=2.9.12" },
+    { name = "pyjwt", specifier = ">=2.12.1" },
     { name = "python-decouple", specifier = ">=3.8" },
 ]
 
