@@ -1,0 +1,19 @@
+[project]
+name = "drf"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django==5.2",
+    "django-cors-headers>=4.9.0",
+    "django-filter>=25.2",
+    "django-rest-swagger>=2.2.0",
+    "djangorestframework>=3.17.1",
+    "djangorestframework-simplejwt>=5.5.1",
+    "djoser>=2.3.3",
+    "drf-yasg>=1.21.15",
+    "pillow>=12.2.0",
+    "psycopg2>=2.9.12",
+    "python-decouple>=3.8",
+]
