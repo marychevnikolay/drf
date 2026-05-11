@@ -90,7 +90,7 @@ class ChangePasswordView(generics.UpdateAPIView):
     
 @api_view(['POST'])
 @permission_classes([permissions.IsAuthenticated])
-def loout_view(request):
+def logout_view(request):
     """Выход пользователя"""
     try:
         refresh_token = request.data['refresh_token']
